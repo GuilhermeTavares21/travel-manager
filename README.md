@@ -55,13 +55,7 @@ DB_PASSWORD=laravel
 docker-compose up -d --build
 ```
 
-### 4. Rodar migrations e seeders
-
-```bash
-docker exec -it onfly-app php artisan migrate
-```
-
-### 5. Rodar os testes
+### 4. Rodar os testes
 
 ```bash
 docker exec -it onfly-app php artisan test
@@ -86,6 +80,8 @@ POST /api/register
 | password              | string  | Sim         |
 | password_confirmation | string  | Sim         |
 | is_admin              | boolean | Não         |
+
+> **Nota:** Para criar um usuário admin, é necessário passar `is_admin` como `true` na requisição. Caso contrário, o usuário será criado como usuário comum.
 
 <details>
 <summary>Copiar cURL</summary>
